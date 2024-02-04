@@ -1,1 +1,2 @@
-# learnbefore-ui
+# Frontend for LearnBefore™
+
