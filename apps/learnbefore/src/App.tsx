@@ -1,9 +1,11 @@
-import AuthenticationPage from "./pages/AuthenticationPage";
+import HomePage from "./pages/HomePage.tsx";
+import LoginPage from "./pages/LoginPage.tsx";
 
 function App() {
   return (
     <>
-    <AuthenticationPage/>
+      <LoginPage></LoginPage>
+      {/*<HomePage></HomePage>*/}
     </>
   );
 }
