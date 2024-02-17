@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
-import { Link } from "react-router-dom"; // Updated import statement
+import { Link } from "react-router-dom";
 import {
   NavigationMenuLink,
   NavigationMenuList,

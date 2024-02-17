@@ -2,9 +2,18 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { useAuthentication } from "@/hooks/useAuthentication";
 import { BookOpenCheck } from "lucide-react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { RoutePaths } from "@/routes.ts";
 
 export default function AuthenticationPage() {
   const { userToken, login } = useAuthentication();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userToken != null) navigate(RoutePaths.index);
+  }, [navigate, userToken]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen px-4">

@@ -1,21 +1,20 @@
-// authHooks.ts
-import {useGoogleLogin} from "@react-oauth/google";
-import {atom, useAtom} from "jotai";
+import { TokenResponse, useGoogleLogin } from "@react-oauth/google";
+import { atom, useAtom } from "jotai";
 
-const userTokenAtom = atom<string>("");
+const userTokenAtom = atom<TokenResponse | null>(null);
 
 export const useAuthentication = () => {
-    const [userToken, setUserToken] = useAtom(userTokenAtom);
+  const [userToken, setUserToken] = useAtom(userTokenAtom);
 
-    const login = useGoogleLogin({
-        onSuccess: (tokenResponse) => {
-            setUserToken(tokenResponse.access_token);
-            console.log(tokenResponse);
-        },
-    });
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => {
+      setUserToken(tokenResponse);
+      console.log(tokenResponse);
+    },
+  });
 
-    return {
-        userToken,
-        login,
-    };
+  return {
+    userToken,
+    login,
+  };
 };
