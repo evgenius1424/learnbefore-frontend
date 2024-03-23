@@ -18,7 +18,7 @@ export const ChatPage: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
 
   const handleSend = (e: React.FormEvent) => {
-    e.preventDefault(); // Prevents the default form submission behavior
+    e.preventDefault();
     if (inputValue.trim() !== '') {
       const words = inputValue.trim().split(/\s+/);
       const responseWords: Word[] = words.map(word => ({
@@ -42,7 +42,7 @@ export const ChatPage: React.FC = () => {
             {messages.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full">
                 <h1 className="text-3xl font-semibold text-gray-800 mb-4">Welcome to Learnbefore</h1>
-                <p className="text-lg text-center text-gray-500 mb-8">To get started, enter text in the input below to find and learn unfamiliar words!</p>
+                <p className="text-lg text-center text-gray-500 mb-8">Start discovering new words by typing in the input field below!</p>
               </div>
             ) : (
               messages.map((message, index) => {
